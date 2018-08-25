@@ -13,7 +13,7 @@ rrs_database <- fread("https://raw.githubusercontent.com/SurveyDataAnalysis/supp
 # Clean up your workspace by unloading packages when you're finished
 # Note: This is command that RStudio runs when you uncheck a package
 # in the Packages tab
-detach("package:data.table", unload=TRUE)
+detach("package:data.table", unload = TRUE)
 
 # So, rrs_database is the original database.
 # We must remember to save both the raw and intermediate forms
