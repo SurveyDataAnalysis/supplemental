@@ -3,10 +3,13 @@
 # Thanks to Rbloggers for writing about the data.table package
 # https://www.r-bloggers.com/getting-data-from-an-online-source/
 
-# These two lines can be commented out if these two packages
-# are already installed:
-install.packages("curl")
-install.packages("data.table")
+# If needed, install some packages ----------------------------------------
+if("curl" %in% installed.packages() == FALSE) {
+  install.packages("curl")
+}
+if("data.table" %in% installed.packages() == FALSE) {
+  install.packages("data.table")
+}
 
 library(data.table) 
 
@@ -31,9 +34,14 @@ detach("package:data.table", unload = TRUE)
 
 rrs_working_data <- rrs_database
 
-# Print a helpful message for the reader.
-cat("You now have two new files in you R Environment.\n\n",
-    "You have rrs_database, which is the original file.\n",
-    "You also have rrs_working_data, a copy of the original file.\n\n",
-    "Only manipulate and make changes to the working file, rrs_working_data.\n",
-    "This way, you can always refer back to the original data to help track down errors.")
+if(exists("rrs_working_data") & exists("rrs_database")) {
+  # Print a helpful message for the reader.
+  cat("You now have two new files in you R Environment.\n\n",
+      "You have rrs_database, which is the original file.\n",
+      "You also have rrs_working_data, a copy of the original file.\n\n",
+      "Only manipulate and make changes to the working file, rrs_working_data.\n",
+      "This way, you can always refer back to the original data to help track down errors.")
+} else {
+  cat("Something went wrong.\n",
+      "Try installing the curl and data.table packages first")
+}
