@@ -2,6 +2,12 @@
 
 # Thanks to Rbloggers for writing about the data.table package
 # https://www.r-bloggers.com/getting-data-from-an-online-source/
+
+# These two lines can be commented out if these two packages
+# are already installed:
+install.packages("curl")
+install.packages("data.table")
+
 library(data.table) 
 
 # The URL for the data is :
