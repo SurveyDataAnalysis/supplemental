@@ -61,6 +61,13 @@ apply(rrs, 2, function(x) table(x, useNA = "always"))
 # An alternative table() method
 apply(rrs, 2, table, useNA = "always")
 
+# You can also look at proportions using prop.table()
+# Frequency table 
+table(rrs$rrs1, useNA = "always")
+
+# Proportion table
+proportions(table(rrs$rrs1, useNA = "always"))
+
 # Have a quick look at the two-way table.
 # This can illuminate the degress of association.
 # Look at the table; where is it most vs. least dense?
@@ -83,7 +90,7 @@ rrs1_bar_chart <- ggplot(rrs, aes(rrs1)) +
         panel.background = element_blank(),
         axis.line = element_line(color = "black")) +
   scale_x_discrete(name ="RRS1: Analyze recent events to try to understand why you are depressed", 
-                 limits=c("Almost, never", "Sometimes", "Often", "Almost always"))
+                 limits=c("Almost never", "Sometimes", "Often", "Almost always"))
 
 # Display the chart
 rrs1_bar_chart
