@@ -77,7 +77,7 @@ score_a_survey <- function (items, min_num_items = length(items)) {
 # This function takes a single vector of survey scores as input.
 # It returns score re-scaled to 0-100 percent metric.
 # Thus, the minimum possible score is 0%,
-# the maximum possible score is 100%, and everything in between<
+# the maximum possible score is 100%, and other scores in between are possible
 #
 # Arguments:  raw_scores - A vector containing numeric survey scores
 #             min_possible - The minimum possible score on the survey
