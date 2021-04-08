@@ -90,7 +90,7 @@ score_a_survey <- function (items, min_num_items = length(items)) {
 
 pomp <- function(raw_scores, min_possible, max_possible) {
   # Handle some errors
-    if(!is.vector(raw_scores) | is.numeric(raw_scores)) {
+    if(!is.vector(raw_scores) | !is.numeric(raw_scores)) {
     stop("raw_scores must be a vector of numeric data. Please try again")
   }
   if(min_possible >= max_possible) {
